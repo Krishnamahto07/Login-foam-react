@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <div className='flex justify-center items-center text-3xl h-full font-bold '>Home</div>
   )
 }

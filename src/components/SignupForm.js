@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import { IoEyeOutline } from "react-icons/io5";
 import { IoEyeOffOutline } from "react-icons/io5";
-export const SignupForm = ({setIsLoggedIn,isLoggedin}) => {
-    console.log(isLoggedin,"in signup");
+import { useNavigate } from 'react-router-dom';
+export const SignupForm = ({setIsLoggedin}) => {
+    const navigate = useNavigate();
+    
     const [formData , setFormData] = useState({
         firstName:"",
         lastName:"",
@@ -21,7 +23,8 @@ export const SignupForm = ({setIsLoggedIn,isLoggedin}) => {
     }
     function submitHandler(e){
         e.preventDefault();
-        setIsLoggedIn(true);
+        setIsLoggedin(true);
+        navigate('/')
     }
   return (
     <div>
@@ -35,7 +38,8 @@ export const SignupForm = ({setIsLoggedIn,isLoggedin}) => {
                     <p>First Name<sup>*</sup></p>
                     <input type='text' 
                     placeholder='Enter First Name :'
-                    required name='firstname'
+                    required 
+                    name='firstName'
                     onChange={changeHandler}
                     value={formData.firstName} />
                 </label>
@@ -43,7 +47,7 @@ export const SignupForm = ({setIsLoggedIn,isLoggedin}) => {
                     <p>Last Name<sup>*</sup></p>
                     <input type='text' 
                     placeholder='Enter Last Name :'
-                    required name='lastname'
+                    required name='lastName'
                     onChange={changeHandler}
                     value={formData.lastName} />
                 </label>
@@ -80,7 +84,7 @@ export const SignupForm = ({setIsLoggedIn,isLoggedin}) => {
                     </span>
                 </label>
             </div>
-            <button>Create Account</button>
+            <button >Create Account</button>
         </form>
     </div>
   )

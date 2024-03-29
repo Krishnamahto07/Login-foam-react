@@ -10,7 +10,7 @@ export const Navbar = (props) => {
         darkTheme ? setDarkTheme(false) : setDarkTheme(true)
     }
   return (
-    <div className='flex justify-around items-center gap-5 w-full h-10 pt-3'>
+    <div className='flex justify-around items-center w-11/12 max-w-[1160px] py-4 mx-auto'>
         <Link to="/" className=''>
           <img src={logo} alt='logo' width={160} height={80} loading='lazy'/>
         </Link>
@@ -28,20 +28,22 @@ export const Navbar = (props) => {
             </li>
           </ul>
         </div>
-        <div className='flex gap-3'>
+        <div className='flex items-center gap-x-4 '>
         {!isLoggedin &&
           <Link to='/login'>
-            <button>Login</button>
+            <button className='bg-gray-800 text-white rounded-lg border px-[12px] py-[8px] border-gray-900'>Login</button>
           </Link>
         }
         {!isLoggedin &&
           <Link to='/signup'>
-            <button>Sign Up</button>
+            <button className='bg-gray-800 text-white rounded-lg border px-[12px] py-[8px] border-gray-900'>Sign Up</button>
           </Link>
         }
         {isLoggedin &&
           <Link to='/'>
-            <button onClick={()=>{
+            <button 
+            className='bg-gray-800 text-white rounded-lg border px-[12px] py-[8px] border-gray-900'
+            onClick={()=>{
               setIsLoggedin(false)
               toast.success("Loged Out successfull !")
             }}>Logout</button>
@@ -49,7 +51,8 @@ export const Navbar = (props) => {
         }
         { isLoggedin &&
           <Link to='/dashboard'>
-            <button>Dashboard</button>
+            <button
+            className='bg-gray-800 text-white rounded-lg border px-[12px] py-[8px] border-gray-900'>Dashboard</button>
           </Link>
         }
         </div>

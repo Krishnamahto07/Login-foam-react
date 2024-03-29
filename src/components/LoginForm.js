@@ -4,13 +4,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { IoEyeOffOutline } from "react-icons/io5";
 import { Link, useNavigate } from 'react-router-dom';
 export const LoginForm = (props) => {
-    const {isLoggedin , setIsLoggedIn} = props;
-    // console.log(setIsLoggedIn);
-    function hlo(){
-        console.log("hlo");
-    }
-    console.log(hlo);
-    console.log(isLoggedin,"in login");
+    const { setIsLoggedin} = props;   
     const navigate = useNavigate();
     const [formData , setFormData] = useState({
         email:"",
@@ -27,7 +21,7 @@ export const LoginForm = (props) => {
     }
     function submitHandler(e){
         e.preventDefault();
-        setIsLoggedIn(true);
+        setIsLoggedin(true);
         toast.success("Login Succussfull");
         navigate('/dashboard');
     }
