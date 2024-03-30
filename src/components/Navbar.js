@@ -58,7 +58,7 @@ export const Navbar = (props) => {
         </div>
 
 
-        <button onClick={()=>{clickHandler()}}>Mode</button>
+        <button className='bg-gray-800 text-white rounded-lg border px-[12px] py-[8px] border-gray-900 dark:border-white ' onClick={()=>{clickHandler()}}>Mode</button>
     </div>
   )
 }

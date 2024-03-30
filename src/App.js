@@ -6,6 +6,7 @@ import { Home } from './pages/Home';
 import { Signup } from './pages/Signup';
 import { Login } from './pages/Login';
 import { Dashboard } from './pages/Dashboard';
+import { PrivateRoute } from './pages/PrivateRoute';
 
 function App() {
   
@@ -25,7 +26,11 @@ function App() {
             <Route path="/" element={<Home  />} />
             <Route path="/signup" element={<Signup setIsLoggedin={setIsLoggedin} />} />
             <Route path="/login" element={<Login setIsLoggedin={setIsLoggedin} />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard" element={
+              <PrivateRoute isLoggedin= {isLoggedin}>
+                <Dashboard/>
+              </PrivateRoute>
+            } />
           </Routes>
         </div>
     </div>
